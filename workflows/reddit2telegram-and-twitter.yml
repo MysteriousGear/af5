@@ -10,7 +10,7 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/IdioticButAccurate/new/
+    url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
       limit: 3
