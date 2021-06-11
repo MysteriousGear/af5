@@ -10,7 +10,7 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://reddit.com/r/nearprog/new
+    url: https://reddit.com/r/listentothis/new
     source: json
     config:
       limit: 3
