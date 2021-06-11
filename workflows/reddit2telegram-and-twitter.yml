@@ -13,7 +13,7 @@ on:
     url: https://reddit.com/r/nearprog/new
     source: json
     config:
-      limit: 15
+      limit: 3
 jobs:
   telegram:
     name: Send a telegram message html
