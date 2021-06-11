@@ -1,0 +1,53 @@
+  
+# it works!
+
+# link preview is of 'song.link' in both platforms
+
+# no thumbnails attached or embedded. Thumbnails can be found in high quality here: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+
+# to make an <a> element invisible on telegram, use the spaceial place holder '&#8205;': <a href="somerurl"> &#8205; </a>
+
+name: Send a telegram message and tweeet when new post in sub
+on:
+  reddit:
+    url: https://reddit.com/r/nearprog/new
+    source: json
+    config:
+      limit: 15
+jobs:
+  telegram:
+    name: Send a telegram message html
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Send a telegram message html
+        uses: appleboy/telegram-action@v0.0.8
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            <a>${{ on.reddit.outputs.title }}</a>           
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
+            <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
+            
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
+          format: html
+
+
+  tweet:
+    name: Send a tweet no markup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ethomson/send-tweet-action@v1
+        with:
+          status: |            
+            ${{ on.reddit.outputs.title }}
+            
+            🔗 Link to the post:
+            https://www.reddit.com${{ on.reddit.outputs.permalink }}
+            
+            🎵 Listen on your favorite platform:
+            https://song.link/${{ on.reddit.outputs.url }}
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
