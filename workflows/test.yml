@@ -1,8 +1,8 @@
   
 # telegram only
 # messages are sent to a dummy bot
-# change active to 'true' to run.
-
+# force mode enabled to force action to work regardless of the cache 
+# change active to 'true' to run
 
 name: Send a telegram message to test everything works fine
 on:
@@ -12,7 +12,8 @@ on:
     config:
       limit: 1
       # change to 'true' to make the trigger active.
-      active: false
+      active: true
+      force: true
 
 jobs:
   telegram:
