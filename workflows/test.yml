@@ -8,7 +8,7 @@ on:
     source: json
     config:
       limit: 3
-      active: false
+      active: true
 
 jobs:
   telegram:
