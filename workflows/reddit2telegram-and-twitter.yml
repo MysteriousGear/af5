@@ -5,15 +5,15 @@
 
 # no thumbnails attached or embedded. Thumbnails can be found in high quality here: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
 
-# to make an <a> element invisible on telegram, use the spaceial place holder '&#8205;': <a href="somerurl"> &#8205; </a>
+# to make an <a> element invisible on telegram, use the special place holder '&#8205;': <a href="somerurl"> &#8205; </a>
 
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/progrockmusic/new/
+    url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 1
+      limit: 3
 jobs:
   telegram:
     name: Send a telegram message html
