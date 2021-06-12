@@ -16,7 +16,7 @@ on:
       
     source: json
     config:
-      limit: 25
+      limit: 0
       # change to 'true' to make the trigger active.
       active: true
 
