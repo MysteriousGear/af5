@@ -4,12 +4,14 @@
 # pull one post from r/listentothis
 
 name: Send a telegram message to test everything works fine
-#on:
+on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/top/?t=week/
+    url: https://www.reddit.com/r/listentothis/new/
     source: json
     config:
       limit: 1
+      every: "@reboot"
+
 jobs:
   telegram:
     name: Send a telegram message html
