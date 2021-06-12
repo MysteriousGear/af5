@@ -10,7 +10,7 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/nearprog/new/
+    url: https://www.reddit.com/r/listentothis/new/
     source: json
     config:
       limit: 3
@@ -30,6 +30,8 @@ jobs:
             <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
+            
+            <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}">⏱️ Posted at</a>
           format: html
 
 
