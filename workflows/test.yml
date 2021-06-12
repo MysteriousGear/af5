@@ -6,13 +6,10 @@
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/
+    url: https://www.reddit.com/r/listentothis/top/?t=week/
     source: json
     config:
-    
-# change limit number to 1 to run
-
-      limit: 0
+      limit: 1
 jobs:
   telegram:
     name: Send a telegram message html
