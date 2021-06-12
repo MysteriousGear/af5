@@ -1,14 +1,16 @@
   
 # telegram only
 
+# pull one random post from r/listentothis
+
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/new/
+    url: https://www.reddit.com/r/listentothis/random
     source: json
     config:
     
-# change limit number 
+# change limit number to 1 
 
       limit: 0
 jobs:
