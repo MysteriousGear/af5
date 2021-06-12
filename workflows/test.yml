@@ -1,12 +1,12 @@
   
 # telegram only
 
-# pull one random post from r/listentothis
+# pull one post from r/listentothis
 
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/random
+    url: https://www.reddit.com/r/listentothis/new
     source: json
     config:
     
