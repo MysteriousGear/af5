@@ -10,9 +10,9 @@ on:
     source: json
     config:
     
-# change limit number to 1 
+# change limit number to 1 to run
 
-      limit: 0
+      limit: 1
 jobs:
   telegram:
     name: Send a telegram message html
