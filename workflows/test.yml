@@ -7,12 +7,18 @@
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/new/
+    url: 
+      - https://www.reddit.com/r/listentothis/new/
+      - https://www.reddit.com/r/rock/new/
+      - https://www.reddit.com/r/metal/new/
+      - https://www.reddit.com/r/stonerrock/new/
+      - https://www.reddit.com/r/postmetal/new/
+      
     source: json
     config:
-      limit: 1
+      limit: 25
       # change to 'true' to make the trigger active.
-      active: false
+      active: true
 
 jobs:
   telegram:
