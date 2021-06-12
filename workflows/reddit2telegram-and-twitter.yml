@@ -10,17 +10,17 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/nearprog/new/
+    url: https://www.reddit.com/r/progrockmusic/new/
     source: json
     config:
-      limit: 3
+      limit: 1
 jobs:
   telegram:
     name: Send a telegram message html
     runs-on: ubuntu-latest
     steps:    
       - name: Send a telegram message html
-        uses: appleboy/telegram-action@v0.0.8
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
     steps:
-      - uses: ethomson/send-tweet-action@v1
+      - uses: ethomson/send-tweet-action@master
         with:
           status: |            
             ${{ on.reddit.outputs.title }}
