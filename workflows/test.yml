@@ -7,7 +7,7 @@
 name: Send a telegram message to test everything works fine
 on:
   - reddit1:
-    url: https://www.reddit.com/r/listentothis/new/    
+    url: https://www.reddit.com/r/folk/new/    
     source: json
     config:
       limit: 1
@@ -15,7 +15,7 @@ on:
       active: true
 
   - reddit2:
-      url: https://www.reddit.com/r/hiphopheads/new/    
+      url: https://www.reddit.com/r/indieheads/new/    
       source: json
       config:
         limit: 1
