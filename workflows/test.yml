@@ -7,12 +7,12 @@
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/bluegrass/new/    
+    url: https://www.reddit.com/r/listentothis/new/    
     source: json
     config:
       limit: 1
       # change to 'true' to make the trigger active.
-      active: true
+      active: false
 
 jobs:
   telegram:
