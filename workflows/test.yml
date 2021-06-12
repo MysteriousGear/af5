@@ -1,13 +1,17 @@
   
 # telegram only
 
+# messages are sent to a dummy bot
+
+
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/progmetal/new/
+    url: https://www.reddit.com/r/listentothis/new/
     source: json
     config:
-      limit: 3
+      limit: 1
+      # change to 'true' to make the trigger active.
       active: true
 
 jobs:
@@ -19,7 +23,7 @@ jobs:
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
           message: |
             <a>${{ on.reddit.outputs.title }}</a>           
             <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
