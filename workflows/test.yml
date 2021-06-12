@@ -14,13 +14,13 @@ on:
       # change to 'true' to make the trigger active.
       active: true
 
-- reddit2:
-    url: https://www.reddit.com/r/hiphopheads/new/    
-    source: json
-    config:
-      limit: 1
-      # change to 'true' to make the trigger active.
-      active: true
+  - reddit2:
+      url: https://www.reddit.com/r/hiphopheads/new/    
+      source: json
+      config:
+        limit: 1
+        # change to 'true' to make the trigger active.
+        active: true
 
 
 jobs:
