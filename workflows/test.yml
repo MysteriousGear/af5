@@ -1,18 +1,18 @@
   
 # telegram only
-
 # messages are sent to a dummy bot
+# change active to 'true' to run.
 
 
 name: Send a telegram message to test everything works fine
 on:
   reddit:
-    url: https://www.reddit.com/r/stonerrock/new/
+    url: https://www.reddit.com/r/listentothis/new/
     source: json
     config:
       limit: 1
       # change to 'true' to make the trigger active.
-      active: true
+      active: false
 
 jobs:
   telegram:
