@@ -14,27 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
       - name: Telegram Message Notify
-        uses: appleboy/telegram-action@v0.1.1
+        uses: appleboy/telegram-action@v0.0.9
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
           message: thumb
           format: markdown
-          photo: https://a.thumbs.redditmedia.com/RU60Z6_dLKVp5tO10NIk30hr6ScY0Lb8sqZJg_HF198.jpg 
-          #${{ on.reddit.outputs.thumbnail }}
-
-
-      - name: Telegram Message Notify
-        uses: appleboy/telegram-action@v0.1.1
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
-          message: |
-            <a>${{ on.reddit.outputs.title }}</a>           
-            <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
-            <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
-            
-            <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
-            
-            <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
-          format: html
+          photo: ${{ on.reddit.outputs.thumbnail }}
