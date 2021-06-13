@@ -12,7 +12,7 @@ on:
     config:
       limit: 1
       # change to 'true' to make the trigger active.
-      active: false
+      active: ture
       force: true
 
 jobs:
@@ -33,6 +33,6 @@ jobs:
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
 
           format: html
-
+          photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
 
  
