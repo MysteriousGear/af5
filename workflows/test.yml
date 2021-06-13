@@ -21,18 +21,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
       - name: Send a telegram message html
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
-        message: |
-          <a>${{ on.reddit.outputs.title }}</a>           
-          <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
-          <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
+          message: |
+            <a>${{ on.reddit.outputs.title }}</a>           
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
+            <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
 
-          <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
 
-        format: html
-        photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+          format: html
+          photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
 
 
