@@ -10,10 +10,10 @@ on:
       
 jobs:
   telegram:    
-      - name: Telegram Message Notify
-        uses: appleboy/telegram-action@v0.1.1
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN_PAKOAFTESTBOT }}
-          message: thumb
-          photo: ${{ github.workspace }}/test/myimage.jpg
+    - name: Telegram Message Notify
+      uses: appleboy/telegram-action@v0.1.1
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN_PAKOAFTESTBOT }}
+        message: thumb
+        photo: ${{ github.workspace }}/test/myimage.jpg
