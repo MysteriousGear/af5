@@ -5,7 +5,7 @@ name: Send a telegram message to test everything works fine
     source: json
     config:
       limit: 1
-      active: true
+      active: false
       force: true
 jobs:
   telegram:
