@@ -20,4 +20,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
           message: thumb
           format: markdown
-          video: ${{ on.reddit.outputs.thumbnail }}
+          photo: ${{ on.reddit.outputs.thumbnail }}
