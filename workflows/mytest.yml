@@ -1,35 +1,22 @@
-  
-# telegram only
-# messages are sent to a dummy bot
-# force mode enabled to force action to work regardless of the cache 
-# change active to 'true' to run
-
-on:
+name: Send a telegram message to test everything works fine
+'on':
   reddit:
-    url: https://www.reddit.com/r/nearprog/new/    
+    url: 'https://www.reddit.com/r/listentothis/new/'
     source: json
     config:
       limit: 1
-      # change to 'true' to make the trigger active.
       active: true
       force: true
-
 jobs:
   telegram:
     name: Send a telegram message html
     runs-on: ubuntu-latest
-    steps:    
+    steps:
       name: Send a telegram message html
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
-        format: html        
-        message: |
-          <a>${{ on.reddit.outputs.title }}</a>           
-          <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
-          <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
-          
-          <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
-        
-        #photo: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+        to: '${{ secrets.TELEGRAM_TO }}'
+        token: '${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}'
+        format: html
+        message: "<a>${{ on.reddit.outputs.title }}</a>           \n<a href=\"https://song.link/${{ on.reddit.outputs.url }}\">&#8205;</a> \n<a href=\"https://www.reddit.com${{ on.reddit.outputs.permalink }}\">\U0001F517 Link to the post</a>\n\n<a href=\"https://song.link/${{ on.reddit.outputs.url }}\">\U0001F3B5 Listen on your favorite platform</a>\n"
+        photo: '${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}'
