@@ -5,6 +5,7 @@
 # change active to 'true' to run
 
 name: Send a telegram message to test everything works fine
+
 on:
   reddit:
     url: https://www.reddit.com/r/listentothis/new/    
