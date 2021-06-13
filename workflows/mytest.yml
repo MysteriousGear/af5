@@ -2,9 +2,9 @@ name: Send a telegram message to test everything works fine
 on:
   reddit:
     url: https://www.reddit.com/r/nearprog/new/
-    source: rss
+    source: json
     config:
-      limit: 3
+      limit: 1
       active: true
       force: true
       
@@ -20,7 +20,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
           message: thumb
           format: markdown
-          photo: ${{ on.reddit.outputs.thumbnail }}
+          photo: https://a.thumbs.redditmedia.com/RU60Z6_dLKVp5tO10NIk30hr6ScY0Lb8sqZJg_HF198.jpg 
+          #${{ on.reddit.outputs.thumbnail }}
 
 
       - name: Send a telegram message html
