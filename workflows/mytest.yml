@@ -20,4 +20,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN_PAKOAFTESTBOT }}
           message: thumb
           format: markdown
-          photo: ${{ on.reddit.outputs.thumbnail }}
+          photo: tests/pexels-stas-knop-6571015 - Copy - Copy.jpg
