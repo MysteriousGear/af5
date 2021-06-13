@@ -4,7 +4,7 @@ on:
     url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 1
+      limit: 3
       active: true
       force: true
       
@@ -13,8 +13,8 @@ jobs:
     name: Send a telegram message html
     runs-on: ubuntu-latest
     steps:    
-      - name: Send a telegram photo message
-        uses: appleboy/telegram-action@0.1.0
+      - name: Telegram Message Notify
+        uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
@@ -24,8 +24,8 @@ jobs:
           #${{ on.reddit.outputs.thumbnail }}
 
 
-      - name: Send a telegram message html
-        uses: appleboy/telegram-action@0.1.0
+      - name: Telegram Message Notify
+        uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
