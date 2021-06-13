@@ -1,22 +1,30 @@
 name: Send a telegram message to test everything works fine
-'on':
+on:
   reddit:
-    url: 'https://www.reddit.com/r/listentothis/new/'
+    url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 1
-      active: false
-      force: true
+      limit: 3
+      active: true
+      force: false
+      
 jobs:
   telegram:
     name: Send a telegram message html
     runs-on: ubuntu-latest
-    steps:
-      name: Send a telegram message html
-      uses: appleboy/telegram-action@master
-      with:
-        to: '${{ secrets.TELEGRAM_TO }}'
-        token: '${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}'
-        format: html
-        message: "<a>${{ on.reddit.outputs.title }}</a>           \n<a href=\"https://song.link/${{ on.reddit.outputs.url }}\">&#8205;</a> \n<a href=\"https://www.reddit.com${{ on.reddit.outputs.permalink }}\">\U0001F517 Link to the post</a>\n\n<a href=\"https://song.link/${{ on.reddit.outputs.url }}\">\U0001F3B5 Listen on your favorite platform</a>\n"
-        photo: '${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}'
+    steps:    
+      - name: Send a telegram message html
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            <a>${{ on.reddit.outputs.title }}</a>           
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">&#8205;</a> 
+            <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">🔗 Link to the post</a>
+            
+            <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
+            
+            <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
+          format: html
+          photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
