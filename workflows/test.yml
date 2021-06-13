@@ -33,4 +33,4 @@ jobs:
           
           <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
         
-        photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+        photo: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
