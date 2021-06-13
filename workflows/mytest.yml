@@ -12,7 +12,13 @@ jobs:
   telegram:
     name: Send a telegram message html
     runs-on: ubuntu-latest
-    steps:    
+    steps:
+      - name: Upload image
+        uses: actions/upload-artifact@v2
+        with:
+          name: App
+          path: ${{ github.workspace }}/test/myimage.jpg
+      
       - name: Telegram Message Notify
         uses: appleboy/telegram-action@v0.1.1
         with:
@@ -20,4 +26,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN_PAKOAFTESTBOT }}
           message: thumb
           format: markdown
-          photo: tests/myimage.jpg
+          photo: ${{ github.workspace }}/test/myimage.jpg
