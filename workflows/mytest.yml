@@ -13,6 +13,14 @@ jobs:
     name: Send a telegram message html
     runs-on: ubuntu-latest
     steps:    
+      - name: Send a telegram photo message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          photo: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+
+
       - name: Send a telegram message html
         uses: appleboy/telegram-action@master
         with:
@@ -27,4 +35,3 @@ jobs:
             
             <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
           format: html
-          photo: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
