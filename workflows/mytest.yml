@@ -27,4 +27,4 @@ jobs:
             
             <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
           format: html
-          photo: @url=${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+          photo: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
