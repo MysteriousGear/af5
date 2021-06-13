@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
       - name: Send a telegram photo message
-        uses: appleboy/telegram-action@0.0.3
+        uses: appleboy/telegram-action@0.1.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
@@ -25,7 +25,7 @@ jobs:
 
 
       - name: Send a telegram message html
-        uses: appleboy/telegram-action@0.0.3
+        uses: appleboy/telegram-action@0.1.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
