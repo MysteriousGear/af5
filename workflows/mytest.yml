@@ -19,6 +19,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_DUMMY_BOT_TOKEN }}
           message: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
+          format: markdown
           photo: true
 
 
