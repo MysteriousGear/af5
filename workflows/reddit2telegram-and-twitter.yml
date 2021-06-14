@@ -28,7 +28,7 @@ jobs:
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
             
-            <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
+#            <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
           format: html
   tweet:
     name: Send a tweet no markup
