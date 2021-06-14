@@ -1,10 +1,7 @@
   
 # it works!
-
 # link preview is of 'song.link' in both platforms
-
 # no thumbnails attached or embedded. Thumbnails can be found in high quality here: ${{ on.reddit.outputs.secure_media.oembed.thumbnail_url }}
-
 # to make an <a> element invisible on telegram, use the special place holder '&#8205;': <a href="somerurl"> &#8205; </a>
 
 name: Send a telegram message and tweeet when new post in sub
@@ -33,14 +30,16 @@ jobs:
             
             <a href="https://www.epochconverter.com/?q=${{ on.reddit.outputs.created_utc }}&tz=Asia/Jerusalem">⏱️ Posted at</a>
           format: html
-
-
   tweet:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
     steps:
       - uses: ethomson/send-tweet-action@master
         with:
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
           status: |            
             ${{ on.reddit.outputs.title }}
             
@@ -49,7 +48,4 @@ jobs:
             
             🎵 Listen on your favorite platform:
             https://song.link/${{ on.reddit.outputs.url }}
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+            
