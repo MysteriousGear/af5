@@ -16,6 +16,7 @@ on:
             $regex: (Announcement|Contest|Discussion)
       sort:
         id: 1
+        
 jobs:
   telegram:
     name: Send a telegram message html
@@ -33,10 +34,11 @@ jobs:
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
           format: html
-        
+          
       - name: Sleep for 4 seconds
         run: sleep 4s
         shell: bash
+        
   tweet:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
