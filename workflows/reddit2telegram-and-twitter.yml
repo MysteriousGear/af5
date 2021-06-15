@@ -6,10 +6,10 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/listentothis/new/
+    url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 1
+      limit: 3
       force: true
       filter:
         link_flair_text:
@@ -17,8 +17,8 @@ on:
             $regex: (Announcement|Contest|Discussion)
 
 jobs:
-  telegram:
-    name: Send a telegram message html
+  mirror:
+    name: Mirror new posts
     runs-on: ubuntu-latest
     steps:    
       - name: Send a telegram message html
@@ -35,7 +35,7 @@ jobs:
           format: html
           
       - name: Send a tweet
-      - uses: ethomson/send-tweet-action@master
+        uses: ethomson/send-tweet-action@master
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
