@@ -55,9 +55,4 @@ jobs:
             https://www.reddit.com${{ on.reddit.outputs.permalink }}
             
             🎵 Listen on your favorite platform:
-            https://song.link/${{ on.reddit.outputs.url }}    
-  sleep:
-    name: Sleep for 4 seconds
-    run: sleep 4s
-    shell: bash
-
+            https://song.link/${{ on.reddit.outputs.url }}
