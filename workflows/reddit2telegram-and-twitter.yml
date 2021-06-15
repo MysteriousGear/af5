@@ -6,11 +6,10 @@
 name: Send a telegram message and tweeet when new post in sub
 on:
   reddit:
-    url: https://www.reddit.com/r/nearprog/new/
+    url: https://www.reddit.com/r/listentothis/new/
     source: json
     config:
       limit: 3
-      force: true
       filter:
         link_flair_text:
           $not:
