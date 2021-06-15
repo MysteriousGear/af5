@@ -37,7 +37,6 @@ jobs:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
     steps:
-      - name: Send Tweet Action
       - uses: ethomson/send-tweet-action@master
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
@@ -52,3 +51,10 @@ jobs:
             
             🎵 Listen on your favorite platform:
             https://song.link/${{ on.reddit.outputs.url }}
+  sleep:
+    name: wait 4 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for 4 seconds
+        run: sleep 4s
+        shell: bash
