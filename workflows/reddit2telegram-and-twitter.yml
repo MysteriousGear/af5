@@ -33,11 +33,8 @@ jobs:
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
           format: html
-
-  tweet:
-    name: Send a tweet no markup
-    runs-on: ubuntu-latest
-    steps:
+          
+      - name: Send a tweet
       - uses: ethomson/send-tweet-action@master
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
@@ -52,4 +49,3 @@ jobs:
             
             🎵 Listen on your favorite platform:
             https://song.link/${{ on.reddit.outputs.url }}
-
