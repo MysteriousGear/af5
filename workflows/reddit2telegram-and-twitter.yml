@@ -33,6 +33,10 @@ jobs:
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
           format: html
+        
+      - name: Sleep for 4 seconds
+        run: sleep 4s
+        shell: bash
   tweet:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
@@ -51,10 +55,3 @@ jobs:
             
             🎵 Listen on your favorite platform:
             https://song.link/${{ on.reddit.outputs.url }}
-  sleep:
-    name: wait 4 seconds
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sleep for 4 seconds
-        run: sleep 4s
-        shell: bash
