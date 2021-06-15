@@ -31,3 +31,4 @@ jobs:
             
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>            
           format: html
+          disable_notification: true
