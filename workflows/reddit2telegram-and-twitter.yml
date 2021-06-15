@@ -9,13 +9,13 @@ on:
     url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
+      force: true
       filter:
         link_flair_text:
           $not:
             $regex: (Announcement|Contest|Discussion)
       sort:
         id: 1
-      force: true
 jobs:
   telegram:
     name: Send a telegram message html
