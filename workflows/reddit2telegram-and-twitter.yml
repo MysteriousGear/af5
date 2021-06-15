@@ -9,8 +9,8 @@ on:
     url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 10
-      skip: 10
+      limit: 5
+      skip: 20
       force: true
       filter:
         link_flair_text:
