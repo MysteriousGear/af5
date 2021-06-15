@@ -11,6 +11,8 @@ on:
         link_flair_text:
           $not:
             $regex: (Announcement|Contest|Discussion)
+        sort:
+          id: -1
         
 jobs:
   telegram:
