@@ -4,9 +4,9 @@ on:
     url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      active: true
+      active: false
       force: true
-      limit: 0
+      limit: 3
       filter:
         link_flair_text:
           $not:
