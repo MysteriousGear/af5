@@ -42,6 +42,7 @@ jobs:
     name: Send a tweet no markup
     runs-on: ubuntu-latest
     steps:
+      - name: Send Tweet Action
       - uses: ethomson/send-tweet-action@master
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
