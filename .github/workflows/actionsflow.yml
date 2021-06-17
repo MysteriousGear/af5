@@ -22,7 +22,7 @@ on:
         default: "false"
 jobs:
   run:
-    runs-on: macos-11
+    runs-on: windows-latest
     name: Run
     steps:
       - name: Check is running
