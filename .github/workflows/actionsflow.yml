@@ -22,7 +22,7 @@ on:
         default: "false"
 jobs:
   run:
-    runs-on: windows-latest
+    runs-on: ubuntu-18.04
     name: Run
     steps:
       - name: Check is running
