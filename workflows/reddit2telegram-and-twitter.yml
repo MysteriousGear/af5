@@ -34,7 +34,7 @@ jobs:
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
           format: html
           
-        - name: Send Tweet Action
+      - name: Send Tweet Action
         uses: ethomson/send-tweet-action@v1.0.0
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
