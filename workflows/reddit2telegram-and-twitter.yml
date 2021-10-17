@@ -9,7 +9,8 @@ on:
     url: https://www.reddit.com/r/nearprog/new/
     source: json
     config:
-      limit: 3
+      limit: 6
+      force: true
       filter:
         link_flair_text:
           $not:
@@ -33,9 +34,9 @@ jobs:
             <a href="https://song.link/${{ on.reddit.outputs.url }}">🎵 Listen on your favorite platform</a>
           format: html
           
-      - - name: Send Tweet Action
-          uses: ethomson/send-tweet-action@v1.0.0
-          with:
+        - name: Send Tweet Action
+        uses: ethomson/send-tweet-action@v1.0.0
+        with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
