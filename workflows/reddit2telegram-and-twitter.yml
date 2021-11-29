@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
       - name: Send a telegram message html
-        uses: appleboy/telegram-action@master
+        uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
