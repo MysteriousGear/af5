@@ -6,7 +6,7 @@
 name: Mirror new posts in sub
 on:
   reddit:
-    url: https://old.reddit.com/r/nearprog/new/
+    url: https://www.reddit.com/r/nearprog/new/.rss
     source: json
     config:
       limit: 3
